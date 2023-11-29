@@ -30,3 +30,11 @@ node wallet_gen.js
 ```
 
 Jumlah angka yang dihasilkan dapat disesuaikan dalam kode. ImplicitAccountId adalah alamat Anda.
+
+
+## Pemindahan batch
+```
+node transfer.js
+```
+Harap lakukan pembuatan batch terlebih dahulu, lalu lakukan transfer batch
+Secara default, semua alamat di near_wallets.json yang dihasilkan ditransfer ke 1 dekat.
