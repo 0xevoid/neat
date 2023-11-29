@@ -19,7 +19,7 @@ async function main() {
     await config.keyStore.setKey(config.networkId, config.contractName, keyPair);
     const account = await near.account(config.contractName);
     // Saldo cetak
-    console.log("账户余额：", (await account.getAccountBalance()).available);
+    console.log("Saldo rekening：", (await account.getAccountBalance()).available);
     // Tentukan parameter panggilan kontrak
     const contractArgs = {
         p: "nrc-20",
