@@ -13,7 +13,7 @@ async function main() {
     try {
         walletData = JSON.parse(readFileSync('near_wallets.json', 'utf-8'));
     } catch (e) {
-        console.log('tidak ditemukan near_wallets.json，Gunakan dompet bsru yang dikonfigurasi');
+        console.log('tidak ditemukan near_wallets.json，Gunakan dompet utama yang dikonfigurasi');
     }
     walletData.push(mainWallet);
     const contractArgs = {
@@ -35,7 +35,7 @@ async function main() {
         const near = await connect(config);
         const account = await near.account(wallet.implicitAccountId);
         const balance = await account.getAccountBalance();
-        console.log(`Akun ${wallet.implicitAccountId} keseimbangan: ${balance.available}`);
+        console.log(`Akun ${wallet.implicitAccountId} Keseimbangan: ${balance.available}`);
         for (let i = 0; i < numberOfTimes; i++) {
             try {
                 if (utils.format.parseNearAmount(balance.available) > 0) {
@@ -47,14 +47,15 @@ async function main() {
                         attachedDeposit: "0",
                     });
                     let hash = result.transaction.hash;
-                    // console.log(`${wallet.implicitAccountId}, TIDAK. ${i + 1} operasi berhasil: ${'https://nearblocks.io/zh-cn/txns/' + hash}`);
-                    console.log(`${wallet.implicitAccountId}, TIDAK ${i + 1} operasi berhasil: ${'https://getblock.io/explorers/near/transactions/' + hash}`);
+                    // console.log(`${wallet.implicitAccountId}, YAREYAREEE... ${i + 1} operasi berhasil: ${'https://nearblocks.io/zh-cn/txns/' + hash}`);
+                    console.log(`${wallet.implicitAccountId}, YAREYAREEE... ${i + 1} operasi berhasil: ${'https://getblock.io/explorers/near/transactions/' + hash}`);
+                    await new Promise(resolve => setTimeout(resolve, 10000));
                 } else {
                     console.log(`Akun ${wallet.implicitAccountId} Saldo tidak mencukupi`);
                     break; // Jika saldo tidak mencukupi, lompat keluar dari lingkaran
                 }
             } catch (error) {
-                console.error(`TIDAK. ${i + 1} operasi gagal: `, error);
+                console.error(`ASUUUU ${i + 1} operasi gagal: `, error);
             }
         }
     }
