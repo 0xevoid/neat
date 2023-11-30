@@ -38,3 +38,8 @@ node transfer.js
 ```
 Harap lakukan pembuatan batch terlebih dahulu, lalu lakukan transfer batch
 Secara default, semua alamat di near_wallets.json yang dihasilkan ditransfer ke 1 dekat.
+
+## Permintaan kuantitas MINT
+```
+node query.js
+```
